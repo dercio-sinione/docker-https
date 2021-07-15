@@ -4,7 +4,7 @@ services:
   api:
     stdin_open: true
     image: internacionalseguros/identity-managment-api:latest
-    container_name: identity
+    container_name: identity_https
     ports:
       - '8081:8081'
 
