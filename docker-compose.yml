@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  api:
+    stdin_open: true
+    image: internacionalseguros/identity-managment-api:latest
+    container_name: identity
+    ports:
+      - '8081:8081'
+
+  nginx:
+    stdin_open: true
+    build: ./micro/nginx
+    volumes:
+      - /static
+    ports:
+      - '80:80'
+    depends_on:
+      - api
